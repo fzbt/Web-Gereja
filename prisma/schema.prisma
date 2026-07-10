@@ -1,0 +1,66 @@
+// Prisma schema for GBI PEJATEN VILLAGE UPPERROOM
+// Adapted from MERN-style MongoDB schema to Prisma + SQLite
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String   @id @default(cuid())
+  username     String   @unique
+  password     String // hashed with bcrypt
+  role         String   @default("GUEST") // ADMIN | GUEST
+  fullName     String?
+  phone        String?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  loginHistory LoginHistory[]
+}
+
+model LoginHistory {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  ip        String?
+  userAgent String?
+  success   Boolean  @default(true)
+  createdAt DateTime @default(now())
+}
+
+model Kegiatan {
+  id            String   @id @default(cuid())
+  name          String
+  description   String?
+  scheduleDay   String? // e.g. "Minggu", "Kamis", "Senin & Sabtu"
+  scheduleTime  String? // e.g. "09:00", "19:00", "05:00-06:00"
+  location      String?
+  category      String   @default("UMUM") // IBADAH_RAYA | RUMAH_DOA | DOA_PAGI | UMUM
+  imageUrl      String?
+  eventDate     DateTime? // tanggal spesifik kegiatan (untuk countdown)
+  expiredAt     DateTime? // auto-delete setelah waktu ini
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+model CoolCommunity {
+  id        String   @id @default(cuid())
+  name      String
+  leader    String?
+  phone     String // format: 628xxx
+  area      String?
+  meetDay   String?
+  meetTime  String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Setting {
+  id    String @id @default(cuid())
+  key   String @unique
+  value String
+}
