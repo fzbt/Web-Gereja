@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GBI Pejaten The Park</title>
+<style>
+:root {
+  --bg-color: #fff8f5;
+  --text-color: #2e1f27;
+  --primary-color: #7b2cbf;
+  --secondary-color: #f4e1ec;
+  --accent-color: #f77f00;
+}
+
+    body.dark {
+      --bg-color: #0f1115;
+      --text-color: #e4e4e4;
+      --secondary-color: #1a1d24;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--primary-color);
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    nav a {
+      color: white;
+      margin: 0 12px;
+      text-decoration: none;
+      font-weight: 500;
+      position: relative;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      width: 0;
+      height: 2px;
+      background: var(--accent-color);
+      transition: width 0.3s;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .hero {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      height: 90vh;
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1529070538774-1843cb3265df') no-repeat center/cover;
+      color: white;
+      padding: 2rem;
+    }
+
+    .hero h2 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+    }
+
+    .section {
+      padding: 4rem 2rem;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .section h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: var(--primary-color);
+    }
+
+    .card {
+      background: var(--secondary-color);
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      margin: 1rem 0;
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul li {
+      margin: 0.5rem 0;
+      padding: 0.75rem 1rem;
+      border-left: 4px solid var(--primary-color);
+      background: var(--secondary-color);
+      border-radius: 6px;
+    }
+
+    .btn-toggle {
+      background: var(--accent-color);
+      border: none;
+      padding: 0.6rem 1rem;
+      cursor: pointer;
+      border-radius: 25px;
+      font-weight: bold;
+      color: #fff;
+      transition: background 0.3s;
+    }
+
+    .btn-toggle:hover {
+      background: #e6a41c;
+    }
+
+    form {
+      background: var(--secondary-color);
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    form input, form textarea, form button {
+      width: 100%;
+      margin: 0.7rem 0;
+      padding: 0.9rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    form button {
+      background: var(--primary-color);
+      color: white;
+      border: none;
+      font-size: 1.1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    form button:hover {
+      background: #3a57d5;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      background: var(--primary-color);
+      color: white;
+      margin-top: 2rem;
+    }
+</style>
+</head>
+<body>
+  <header>
+    <h1>GBI Pejaten The Park</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#events">Events</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <h2>Welcome to GBI Pejaten The Park</h2>
+    <p>A place to grow in faith and community.</p>
+  </section>
+
+  <section class="section" id="about">
+    <h2>About Us</h2>
+    <p>GBI Pejaten The Park is a community church where people gather to worship, grow in faith, and serve the community with love.</p>
+  </section>
+
+  <section class="section" id="services">
+    <h2>Our Services</h2>
+    <ul>
+      <li>Sunday Service - 10:00 AM</li>
+      <li>Thursday Prayer Meeting - 7:00 PM</li>
+      <li>Youth Fellowship(Junior Church, Youth, Young Adult) - Saturday</li>
+    </ul>
+  </section>
+
+  <section class="section" id="events">
+    <h2>Upcoming Events</h2>
+    <p>Stay tuned for our upcoming church events, gatherings, and outreach programs!</p>
+  </section>
+
+  <section class="section" id="contact">
+    <h2>Contact Us</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" rows="5"></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 GBI Pejaten The Park. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>
