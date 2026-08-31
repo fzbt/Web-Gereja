@@ -774,5 +774,4 @@ This project is built for **GBI Pejaten Village Upperroom** church. All rights r
 ---
 
 *Built with faith and modern web technologies. Soli Deo Gloria.*
-#   W e b - G e r e j a  
- 
+#
